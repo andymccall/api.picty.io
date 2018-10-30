@@ -1,0 +1,17 @@
+version: "3"
+services:
+  db:
+    container_name: "picty-db"
+    image: mongo
+    ports:
+    - "27017:27017"
+    environment:
+    - MONGODB_PASS=picty..
+    - MONGODB_USER=picty
+  api:
+    container_name: "picty-api"
+    build: src/docker
+    ports:
+    - "8080:8080"
+    depends_on:
+    - db
