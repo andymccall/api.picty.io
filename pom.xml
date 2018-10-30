@@ -31,6 +31,7 @@
         <docker-maven.version>1.4.4</docker-maven.version>
         <docker.image.prefix>andymccall</docker.image.prefix>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
+        <buildcodename>Sparrow</buildcodename>
     </properties>
 
     <repositories>
@@ -178,6 +179,8 @@
                         </manifest>
                         <manifestEntries>
                             <Implementation-Version>${project.version}.${buildNumber}</Implementation-Version>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                            <Build-CodeName>${buildcodename}</Build-CodeName>
                         </manifestEntries>
                     </archive>
                 </configuration>

@@ -1,6 +1,7 @@
 package io.picty.api.controller;
 
 import io.picty.api.Application;
+import io.picty.api.model.BuildDetails;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +26,7 @@ public class ApiController {
 
         ResponseEntity response;
 
-        String buildDetails = Application.class.getPackage().getImplementationVersion();
+        BuildDetails buildDetails = new BuildDetails();
 
         response = new ResponseEntity<>(buildDetails, HttpStatus.OK);
 
